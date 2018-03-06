@@ -35,22 +35,6 @@ export default {
         "Sulfites",
         "Soja",
       ],
-      products: [
-        {name: "Salade Composée", allergens: ["Graines de Sésame", "Arachides"]},
-        {name: "Coeur de Clem", allergens: ["Gluten", "Graines de Sésame"]},
-        {name: "Le Tonata", allergens: ["Oeufs", "Graines de Sésame", "Gluten","Poisson"]},
-        {name: "Le Célèbre Dago", allergens: ["Oeufs", "Graines de Sésame", "Gluten", "Lait"]},
-        {name: "Le Pain de viande", allergens: ["Oeufs", "Gluten", "Arachide"]},
-        {name: "Le Fish", allergens: ["Poisson", "Gluten", "Lait"]},
-        {name: "Le Seguin", allergens: ["Gluten", "Lait", "Arachide"]},
-        {name: "Le Poulet Cocktail", allergens: ["Oeufs", "Gluten"]},
-        {name: "Le Poulet basilic", allergens: ["Oeufs", "Gluten"]},
-        {name: "Le Poulet chorizo", allergens: ["Oeufs", "Gluten"]},
-        {name: "Le Thon piquant maison", allergens: ["Oeufs", "Gluten", "Poisson"]},
-        {name: "Le Poulet basilic", allergens: ["Oeufs", "Gluten"]},
-       
-
-      ],
       list: []
     }
   },computed: {
