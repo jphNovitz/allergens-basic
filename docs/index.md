@@ -1,4 +1,4 @@
-#Allergen Basic
+# Allergen Basic 
 **Ce projet est une simple page qui affiche une liste d'allergies, lorsque l'on clique sur une allergie l'affichage est modifié pour afficher les produits (sandwiches et potages) qui provoquent les allergies sélectionnées. L'objectif est d'apporter une information au consommateur**
 
 ## Technologie utilisée
@@ -54,4 +54,19 @@ Les allergies peuvent être représentées par un simple tableau:
 ``` 
 allergens: ["Céleri", "Oeufs", "Gluten", "Crustacés", "Poisson", "Lupin", "Mollusque","Moutarde",
         "Fruit à coque", "Arachides", "Graines de Sésame", "Sulfites", "Soja", ] 
+```  
+
+La représentation des produits sera à peine plus complexe: un tableau d'objets. Chaque objet contiendra deux propriétés: le nom du produits et un tableau d'allergies.
 ```
+products: [
+        {name: "Salade Composée", allergens: ["Graines de Sésame", "Arachides"]},
+        {name: "Coeur de Clem", allergens: ["Gluten", "Graines de Sésame"]},
+        {name: "Le Tonata", allergens: ["Oeufs", "Graines de Sésame", "Gluten","Poisson"]}] 
+```
+
+
+### Les Composants
+Le projet Vus.js se compose d'un élément principal 'app'. c'est ce qui est injecté dans le 
+```<div id="app">```.  Je pourrait travailler dans ce cadre mais l'application pourrait rapidement devenir lourde.  Tout l'intéret d'utiliser ce framework est la modularité: je vais diviser mon application en divers modules qui vont communiquer entre eux.  
+
+[liens](sources.md) 
