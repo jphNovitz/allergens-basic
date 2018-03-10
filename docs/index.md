@@ -1,6 +1,11 @@
 # Allergen Basic 
 **Ce projet est une simple page qui affiche une liste d'allergies, lorsque l'on clique sur une allergie l'affichage est modifié pour afficher les produits (sandwiches et potages) qui provoquent les allergies sélectionnées. L'objectif est d'apporter une information au consommateur**
 
+  
+[Depôt Github: ](https://github.com/jphNovitz/allergens-basic)  
+[Demo: ](http://demos.jphnovitz.be/allergenes-basic)  
+[Lien vers cette page: ](https://jphnovitz.github.io/allergens-basic/)  
+
 ## Technologie utilisée
 Le language utilisé est Vue.js un framework javascript qui permet de modifier un affichage en temps réel sans rechargement de la page un peu à la manière de Angular ou react.
 
@@ -68,5 +73,11 @@ products: [
 ### Les Composants
 Le projet Vus.js se compose d'un élément principal 'app'. c'est ce qui est injecté dans le 
 ```<div id="app">```.  Je pourrait travailler dans ce cadre mais l'application pourrait rapidement devenir lourde.  Tout l'intéret d'utiliser ce framework est la modularité: je vais diviser mon application en divers modules qui vont communiquer entre eux.  
+  
+Deux composants sont nécéssaires: 
+* <allergens> s'occupera d'afficher les différentes allergies et signalera à son parent quelle est la sélection d'allergies ;
+* <products> Cet élément contiendra la liste d'objets représentant les produits, quand il recoit du parent une liste d'allergies, il sélectionne les produits qui sont liés et le renvoi au parent.
+
+
 
 [liens](sources.md) 

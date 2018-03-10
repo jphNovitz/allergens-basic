@@ -72,8 +72,10 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 
-.allergens{
+.products{
       padding: 2em 0;
+      height: 70vh;
+      min-height: 70vh;
 }
 
 h1, h2 {
@@ -98,7 +100,7 @@ a {
   top: -1px;
 }
 #filtered-list{
-  background-image: url(./logo-clem_00.png);
+  background-image: url(logo-clem_00.png);
   background-repeat: no-repeat;
   background-size: 40vw;
   background-position: center;
