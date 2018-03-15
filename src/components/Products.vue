@@ -102,7 +102,7 @@ a {
 #filtered-list{
   background-image: url(logo-clem_00.png);
   background-repeat: no-repeat;
-  background-size: 40vw;
+  background-size: 20vw;
   background-position: center;
 
 }
