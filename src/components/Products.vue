@@ -1,10 +1,7 @@
 <template>
     <div class="products col-lg-8" id="filtered-list">
-    
         <div class="background-transparent">
-          <ul>
-            <li v-for="product in filtered" class="alert alert-danger">{{product.name}}</li>
-          </ul>
+            <div v-for="product in filtered" class="alert alert-danger text-center">{{product.name}}</div>
         </div>
       </div> <!-- / col-8-->
 </template>
@@ -37,10 +34,11 @@ export default {
         {name: "Le Panini Poulet", allergens: ["Gluten"]},
         {name: "Pâtes Bolo", allergens: ["Gluten"]},
         {name: "Pâtes 4 fromages", allergens: ["Lait", "Gluten"]},
-        {name: "La soupe du jout - Celeri / Poireaux", allergens: ["Céleri"]},
-        {name: "La soupe du jout - Carotte", allergens: []},
+        {name: "La soupe du jour - Celeri / Poireaux", allergens: ["Céleri"]},
+        {name: "La soupe du jour - Carotte", allergens: []},
         {name: "Le Croque-Monsieur", allergens: ["Lait", "Gluten"]},
         {name: "Le New-Yorkais", allergens: ["Oeufs", "Gluten"]},
+        {name: "Le Burger", allergens: ["Lait", "Gluten"]}
       ]
     }
   },computed: {
@@ -73,8 +71,7 @@ export default {
 <style scoped>
 
 .products{
-      padding: 2em 0;
-      height: 70vh;
+     
       min-height: 70vh;
 }
 
@@ -100,7 +97,7 @@ a {
   top: -1px;
 }
 #filtered-list{
-  background-image: url(logo-clem_00.png);
+  background-image: url(/static/logo-clem_00.png);
   background-repeat: no-repeat;
   background-size: 20vw;
   background-position: center;
@@ -110,5 +107,9 @@ a {
   background-color: rgba(255,255,255,.7);
   width: 100%;
   height: 100%;
+}
+
+.alert{
+  margin: 2px auto;
 }
 </style>

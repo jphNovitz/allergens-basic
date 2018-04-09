@@ -70,13 +70,74 @@ products: [
 ```
 
 
-### Les Composants
-Le projet Vus.js se compose d'un élément principal 'app'. c'est ce qui est injecté dans le 
-```<div id="app">```.  Je pourrait travailler dans ce cadre mais l'application pourrait rapidement devenir lourde.  Tout l'intéret d'utiliser ce framework est la modularité: je vais diviser mon application en divers modules qui vont communiquer entre eux.  
-  
-Deux composants sont nécéssaires: 
-* <allergens> s'occupera d'afficher les différentes allergies et signalera à son parent quelle est la sélection d'allergies ;
-* <products> Cet élément contiendra la liste d'objets représentant les produits, quand il recoit du parent une liste d'allergies, il sélectionne les produits qui sont liés et le renvoi au parent.
+#information allergène
+
+##Objectif
+L'objectif est de proposer une application vue.js qui affiche les différentes allergies alimentaires.  Lorsque l'on sélectionne une allergie, la page affiche en vis-à-vis la liste des produits succeptibles de provoquer ces allergies.
+
+##Composants
+Mon application Vue.js sera composée d'un composant 'app' principal qui utilisera d'autres composants.
+Pour ce cas d'utilisation j'ai besoin:
+* de la liste des produits ; 
+* de la liste des allergies ; 
+* afficher un message d'information.
+
+Je n'ai besoin que de cela deux composants: un pour les allergies et un pour les produits.
+
+##Représentation des données
+Pour démarrer rapidement, faisons simple un objet Json qui permet de stocker ce dont j'ai besoin.  Pas de problème de taille, je n'aurais que 14 allergies et à peine un peu plus de produits.
+
+<app>  
+  <allergies>  
+   -- allergies  (json)
+  <products>
+   -- products (json)  
+  <messages>
+
+##Allergies
+Les allergies sont au nombre de 14 :
+* Céleri
+* Oeufs
+* Gluten
+* Crustacés
+* Poisson
+* Lupin
+* Mollusque
+* Moutarde
+* Fruit à coque
+* Arachides
+* Graines de Sésame
+* Sulfites
+* Soja
+
+##Produits  
+* Salade Composée
+* Coeur de Clem
+* Le Tonata
+* Le Célèbre Dago
+* Le Pain de viande
+* Le Fish
+* Le Seguin
+* Le Poulet Cocktail
+* Le Poulet basilic
+* Le Poulet chorizo
+* Le Thon piquant maison
+* Le Thon Mayo Maison
+* Fromage
+* Le Jambon Beurre
+* Le Veggie
+* Le Detox
+* Le Panini Maison
+* Le Panini Prosciuto
+* Le Panini Poulet
+* Pâtes Bolo
+* Pâtes 4 fromages
+* La soupe du jour - Celeri / Poireaux
+* La soupe du jour - Carotte
+* Le Croque-Monsieur
+* Le New-Yorkais
+* Le Burger
+
 
 
 
