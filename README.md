@@ -1,21 +1,10 @@
-# clem-allergenes
+# Information sur les allergène alimentaire
+## Sandwicherie 'La Clémentine'  
 
-> informations allergenes
+En Belgique l'[afsca]() oblige les commerçant du secteur alimentaire à afficher une information sur les allergies que peuvent provoquer les différents produits.  
+  
+J'ai utilisé vue js pour proposer une liste des 14 allergène et, lorsque l'on sélectionne une allergie, la liste des produits est adaptée en temps réel et sans rechargement de la page.
 
-## Build Setup
-
-``` bash
-# install dependencies
-npm install
-
-# serve with hot reload at localhost:8080
-npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
-```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+[demo](http://demos.jphnovitz.be/clementine-allergies/)  
+[la clémentine](http://laclementine.be/allergies-alimentaires)  
+[documentation](https://jphnovitz.github.io/allergens-basic/)
