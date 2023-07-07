@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\AllergyRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: AllergyRepository::class)]
@@ -18,6 +20,14 @@ class Allergy
 
     #[ORM\Column(length: 255)]
     private ?string $name_en = null;
+
+    #[ORM\ManyToMany(targetEntity: Ingredient::class, mappedBy: 'allergies')]
+    private Collection $ingredients;
+
+    public function __construct()
+    {
+        $this->ingredients = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -44,6 +54,33 @@ class Allergy
     public function setNameEn(string $name_en): static
     {
         $this->name_en = $name_en;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Ingredient>
+     */
+    public function getIngredients(): Collection
+    {
+        return $this->ingredients;
+    }
+
+    public function addIngredient(Ingredient $ingredient): static
+    {
+        if (!$this->ingredients->contains($ingredient)) {
+            $this->ingredients->add($ingredient);
+            $ingredient->addAllergy($this);
+        }
+
+        return $this;
+    }
+
+    public function removeIngredient(Ingredient $ingredient): static
+    {
+        if ($this->ingredients->removeElement($ingredient)) {
+            $ingredient->removeAllergy($this);
+        }
 
         return $this;
     }
