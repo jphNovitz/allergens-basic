@@ -2,6 +2,7 @@
 
 namespace App\DataFixtures;
 
+use App\Entity\Allergy;
 use App\Entity\Ingredient;
 use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
@@ -113,7 +114,6 @@ class IngredientFixtures extends Fixture
             array("Pancetta", "Pancetta")
         );
 
-
         foreach ($ingredients as $ingredient) {
             $newIngredient = new Ingredient();
             $newIngredient->setNameFr($ingredient[0]);
@@ -122,5 +122,64 @@ class IngredientFixtures extends Fixture
         }
 
         $manager->flush();
+
+
+        $ingredientsAllergies = array(
+            array("Fromage", "Lait"),
+            array("Mayonnaise", "Oeufs"),
+            array("Moutarde", "Moutarde"),
+            array("Oeuf", "Oeufs"),
+            array("Poisson", "Poissons"),
+            array("Saumon fumé", "Poissons"),
+            array("Crevettes", "Crustacés"),
+            array("Crème fraîche", "Lait"),
+            array("Miel", "Pollen"),
+            array("Pousses de soja", "Soja"),
+            array("Pesto", "Fruits à coque"),
+            array("Pain pita", "Gluten"),
+            array("Anchois", "Poissons"),
+            array("Sésame", "Sésame"),
+            array("Cheddar", "Lait"),
+            array("Feta", "Lait"),
+            array("Céleri", "Céleri"),
+            array("Noix", "Fruits à coque"),
+            array("Noix de cajou", "Fruits à coque"),
+            array("Sauce aïoli", "Ail"),
+            array("Sauce ranch", "Produits laitiers"),
+            array("Sauce tartare", "Oeufs"),
+            array("Sushi", "Poissons"),
+            array("Sauce soja", "Soja"),
+            array("Crevettes tempura", "Crustacés"),
+            array("Sushis rolls", "Poissons"),
+            array("Edamame", "Soja"),
+            array("Pâte à pizza", "Gluten"),
+            array("Mozzarella", "Lait"),
+            array("Parmesan", "Lait"),
+            array("Pâte feuilletée", "Gluten"),
+            array("Fromage de chèvre", "Lait"),
+            array("Sauce Alfredo", "Lait"),
+        );
+
+        $i = 0 ;
+
+        foreach ($ingredientsAllergies as $ingredient) {
+            dump($ingredient);
+            echo "-----------------\n";
+            if (!empty($ingredient[1])) {
+                $ingredientToUpdate[$i] = $manager
+                    ->getRepository(Ingredient::class)
+                    ->findOneBy(['name_fr' => $ingredient[0]]);
+
+                $allergy = $manager->getRepository(Allergy::class)
+                    ->findOneBy(["name_fr" => $ingredient[1]]);
+
+                if ($allergy !== null)
+                $ingredientToUpdate[$i]->addAllergy($allergy);
+            }
+            $i++;
+        }
+        $manager->flush();
+
+
     }
 }
