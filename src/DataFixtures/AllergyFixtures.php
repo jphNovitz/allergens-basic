@@ -10,27 +10,28 @@ class AllergyFixtures extends Fixture
 {
     public function load(ObjectManager $manager): void
     {
-        $allergies = array(
-            array("Arachides", "Peanuts"),
-            array("Fruits à coque", "Tree nuts"),
-            array("Lait", "Milk"),
-            array("Œufs", "Eggs"),
-            array("Poissons", "Fish"),
-            array("Crustacés", "Shellfish"),
-            array("Soja", "Soy"),
-            array("Blé", "Wheat"),
-            array("Sésame", "Sesame"),
-            array("Moutarde", "Mustard"),
-            array("Sulfites", "Sulfites"),
-            array("Lupin", "Lupin"),
-            array("Mollusques", "Mollusks"),
-            array("Céleri", "Celery"),
-            array("Gluten", "Gluten")
-        );
+        $allergies = [
+            ["arachides", "peanuts"],
+            ["fruits à coque", "tree nuts"],
+            ["lait", "milk"],
+            ["œufs", "eggs"],
+            ["poissons", "fish"],
+            ["crustacés", "shellfish"],
+            ["soja", "soy"],
+            ["blé", "wheat"],
+            ["sésame", "sesame"],
+            ["moutarde", "mustard"],
+            ["sulfites", "sulfites"],
+            ["lupin", "lupin"],
+            ["mollusques", "mollusks"],
+            ["céleri", "celery"],
+            ["gluten", "gluten"]
+        ];
+
         foreach ($allergies as $allergy) {
             $newAllergy = new Allergy();
-            $newAllergy ->setNameFr($allergy[0]);
-            $newAllergy ->setNameEn($allergy[1]);
+            $newAllergy->setNameFr($allergy[0]);
+            $newAllergy->setNameEn($allergy[1]);
             $manager->persist($newAllergy);
         }
 
